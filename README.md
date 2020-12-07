@@ -5,8 +5,8 @@ Application qui permet l’affichage d’une liste et l'ajout d'une nouvelle voi
 # Glossaire SpringBoot Framework
 ```java
 @Auteur : Matthieu Labaune
-@Date de création : 15-04-2020
-@Date de mise à jour : 17-10-2020
+@Date de création : 07-12-2020
+@Date de mise à jour : 07-12-2020
 ```
 
 ## 1 · Annotations générales
