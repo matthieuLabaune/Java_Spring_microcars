@@ -29,6 +29,10 @@ Pour relier les parties de l'application entre elles, utilisez le ***```@Autowir
     private CarDao carDao;
 ```
 
+### 1.3 · @Repository
+***```@Repository```*** est une annotation qui indique que la classe associée est un dépôt. Un dépôt est un mécanisme d'encapsulation du stockage, de la récupération et du comportement de recherche qui émule une collection d'objets.
+
+
 ## 2 · Annotations Web
 
 ### 2.1 · @Controller
