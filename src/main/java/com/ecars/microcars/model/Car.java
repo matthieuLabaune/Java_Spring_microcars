@@ -1,22 +1,12 @@
 package com.ecars.microcars.model;
 
 public class Car {
-    private int id;
     private String brand;
-    private String model;
+    private String modele;
 
-    public Car(int id, String brand, String model) {
-        this.id = id;
+    public Car(String brand, String modele) {
         this.brand = brand;
-        this.model = model;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+        this.modele = modele;
     }
 
     public String getBrand() {
@@ -27,20 +17,19 @@ public class Car {
         this.brand = brand;
     }
 
-    public String getModel() {
-        return model;
+    public String getModele() {
+        return modele;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public void setModele(String modele) {
+        this.modele = modele;
     }
 
     @Override
     public String toString() {
         return "Car{" +
-                "id=" + id +
                 ", brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
+                ", modele='" + modele + '\'' +
                 '}';
     }
 }
