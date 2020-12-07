@@ -3,6 +3,12 @@
 Application qui permet l’affichage d’une liste et l'ajout d'une nouvelle voiture à la liste de modèles de voitures.
 
 # Glossaire SpringBoot Framework
+```java
+@Auteur : Matthieu Labaune
+@Date de création : 15-04-2020
+@Date de mise à jour : 17-10-2020
+```
+
 ## 1 · Annotations générales
 
 ### 1.1 · @EnableAutoConfiguration
