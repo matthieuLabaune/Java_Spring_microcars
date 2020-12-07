@@ -8,6 +8,9 @@ Application qui permet l’affichage d’une liste et l'ajout d'une nouvelle voi
 @Date de création : 07-12-2020
 @Date de mise à jour : 07-12-2020
 ```
+### Ressources
+[Cheat Sheet RebelLabs](https://www.jrebel.com/system/files/spring-annotations-cheat-sheet.pdf)
+
 
 ## 1 · Annotations générales
 
