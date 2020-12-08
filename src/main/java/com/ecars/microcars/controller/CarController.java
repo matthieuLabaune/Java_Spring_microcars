@@ -23,7 +23,6 @@ public class CarController {
     //cars/{id}
     @GetMapping(value = "cars/{id}") //GET Mapping pour l'uri pour retourner une voiture par l'id
     public Car showCar(@PathVariable int id) {// Va chercher le paramètre id dans l'url et le passe à notre méthode
-
         return carDao.findById(id);
     }
 
