@@ -3,6 +3,7 @@
 Application qui permet l’affichage d’une liste et l'ajout d'une nouvelle voiture à la liste de modèles de voitures.
 
 ![Img API](api_rest_springboot.png)
+*Fig.1 · Documentation de l'API Rest réalisée avec Swagger*
 
 # Glossaire SpringBoot Framework
 ```java
