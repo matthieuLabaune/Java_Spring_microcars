@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class CarDaoImpl implements CarDao{
+public class CarDaoImpl implements CarDao {
 
-    public  static List<Car> cars = new ArrayList<>();
+    public static List<Car> cars = new ArrayList<>();
 
     static {
-        cars.add(new Car (1, "Honda", "Jazz"));
-        cars.add(new Car (2, "Volvo", "940"));
+        cars.add(new Car(1, "Honda", "Jazz"));
+        cars.add(new Car(2, "Volvo", "940"));
         cars.add(new Car(3, "Opel", "Corsa"));
     }
 
@@ -24,11 +24,17 @@ public class CarDaoImpl implements CarDao{
 
     @Override
     public Car findById(int id) {
+        for (Car car : cars) {
+            if (car.getId() == id) {
+                return car;
+            }
+        }
         return null;
     }
 
     @Override
     public Car save(Car car) {
-        return null;
+        cars.add(car);
+        return car;
     }
 }

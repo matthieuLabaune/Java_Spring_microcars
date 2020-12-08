@@ -5,6 +5,9 @@ public class Car {
     private String brand;
     private String model;
 
+    public Car() {
+    }
+
     public Car(int id, String brand, String model) {
         this.id = id;
         this.brand = brand;
