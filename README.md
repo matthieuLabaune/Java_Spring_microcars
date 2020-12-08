@@ -95,4 +95,9 @@ public Car showCar(@PathVariable int id) {
     }
 ```
        
-
+## 2.7 · CRUD Annotations
+Pour construire un CRUD on peut utiliser les annotations correspondant aux requêtes HTTP, à savoir :
+1. GET : @GetMapping(value = "cars"),
+2. POST : @PostMapping(value = "cars/store"),
+3. PUT : @PutMapping(value = "/cars/{id}/update"),
+4. DELETE : @DeleteMapping (value = "/cars/{id}/destroy").
