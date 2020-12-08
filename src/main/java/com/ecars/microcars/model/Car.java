@@ -1,5 +1,7 @@
 package com.ecars.microcars.model;
 
+import java.util.Objects;
+
 public class Car {
     private int id;
     private String brand;

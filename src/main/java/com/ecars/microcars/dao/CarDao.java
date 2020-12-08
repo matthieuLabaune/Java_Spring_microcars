@@ -11,4 +11,8 @@ public interface CarDao {
     public Car findById(int id);
 
     public Car save(Car car);
+
+    public Car deleteCar(int id);
+
+    public Car updateCar(Car car);
 }
