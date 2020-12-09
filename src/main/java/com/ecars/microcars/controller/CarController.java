@@ -35,14 +35,14 @@ public class CarController {
 
     @ApiOperation(value = "Ajoute une voiture grâce à la liste")
     //STORE /cars
-    @RequestMapping(value = "/cars/store", method = RequestMethod.POST)
+    @RequestMapping(value = "/cars/", method = RequestMethod.POST)
     public ResponseEntity<Object> createCar(@RequestBody Car car) {
         carDao.save(car);
         return new ResponseEntity<>("Car is created successfully", HttpStatus.CREATED);
     }
 
     @ApiOperation(value = "Mise à jour d'une voiture grâce à son ID")
-    @PutMapping(value = "/cars/{id}/")
+    @PutMapping(value = "/cars/{id}")
     public ResponseEntity<Object> updateCar(@PathVariable("id") int id, @RequestBody Car car) {
         Car currentCar = carDao.findById(id);
         currentCar.setBrand(car.getBrand());
