@@ -19,11 +19,11 @@ Application qui permet l’affichage d’une liste et l'ajout d'une nouvelle voi
 
 ### 1.1 · @EnableAutoConfiguration
 
-L'annotation ***```@EnableAutoConfiguration```*** fait deviner à Spring la configuration basée sur les fichiers JAR disponibles sur le classpath. Il peut savoir quelles bibliothèques vous utilisez et préconfigurer leurs composants sans que vous ayez à lever le petit doigt. C'est ainsi que fonctionnent toutes les bibliothèques de Spring Starter. Cela signifie que c'est un atout majeur, aussi bien lorsque vous commencez à travailler avec une bibliothèque que lorsque vous savez que la configuration par défaut est raisonnable.
+L'annotation ***```@EnableAutoConfiguration```*** fait deviner à Spring la configuration basée sur les fichiers JAR disponibles sur le classpath. Il peut savoir quelles bibliothèques vous utilisez et préconfigurer leurs composants sans que vous ayez à lever le petit doigt. 
 
 ### 1.2 · @Autowired
 
-Pour relier les parties de l'application entre elles, utilisez le ***```@Autowired```*** sur les champs, les constructeurs ou les méthodes d'un composant. Le mécanisme d'injection de la dépendance du ressort permet de câbler les "***beans***" (*dépendances*) appropriés dans les membres de la classe marqués d'un ***```@Autowired```***.
+Pour relier les parties de l'application entre elles, utilisez le ***```@Autowired```*** sur les champs, les constructeurs ou les méthodes d'un composant. ***```@Autowired```***.
 
 ##### Exemple
     
