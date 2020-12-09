@@ -12,9 +12,9 @@ public class CarDaoImpl implements CarDao {
     public static List<Car> cars = new ArrayList<>();
 
     static {
-        cars.add(new Car(1, "Honda", "Jazz"));
-        cars.add(new Car(2, "Volvo", "940"));
-        cars.add(new Car(3, "Opel", "Corsa"));
+        cars.add(new Car(0, "Honda", "Jazz"));
+        cars.add(new Car(1, "Volvo", "940"));
+        cars.add(new Car(2, "Opel", "Corsa"));
     }
 
     @Override
