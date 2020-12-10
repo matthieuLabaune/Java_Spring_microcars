@@ -46,15 +46,22 @@ public class CarController {
         Car currentCar = carRepository.findById(id);
         currentCar.setBrand(car.getBrand());
         currentCar.setModel(car.getModel());
-        carRepository.updateCar(currentCar);
+        carRepository.save(currentCar);
         return new ResponseEntity<>("Car is updated successsfully", HttpStatus.OK);
     }
 
     //DELETE
-       /* @ApiOperation(value = "Supprime une voiture grâce à son ID")
+/*        @ApiOperation(value = "Supprime une voiture grâce à son ID")
+        @DeleteMapping (value = "/cars/{id}")
+        public void deleteCar(@PathVariable int id) {
+            carRepository.deleteById(id);
+        }*/
+
+    @ApiOperation(value = "Supprime une voiture grâce à son ID")
     @RequestMapping(value = "/cars/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Object> delete(@PathVariable("id") int id) {
-        carDao.deleteCar(id);
+        carRepository.deleteById(id);
         return new ResponseEntity<>("Car is deleted successfully", HttpStatus.OK);
-    }*/
+    }
 }
+

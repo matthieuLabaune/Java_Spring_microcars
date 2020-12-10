@@ -9,12 +9,11 @@ import java.util.List;
 @Repository
 public interface CarRepository extends JpaRepository<Car, Integer> {
 
-    //Contrats pour CarDao
-    public List<Car> findAll();
+     List<Car> findAll();
 
-    public Car findById(int id);
+     Car findById(int id);
 
-    public Car save(Car car);
+     Car save(Car car);
 
-
+     Car deleteById(int id);
 }
