@@ -19,7 +19,14 @@ public class CarControllerTest {
     @Test
     public void stage1_AllCars() throws Exception {
         String cars = restTemplate.getForObject("/cars", String.class);
-        assertEquals(cars, "[{\"id\":1,\"createdAt\":\"2020-12-10T13:13:46.428+00:00\",\"modifiedAt\":\"2020-12-10T13:13:46.428+00:00\",\"brand\":\"Renault\",\"model\":\"Clio\"}]");
+        assertEquals(cars, "[{\"id\":1,\"createdAt\":\"2020-12-10T13:13:46.428+00:00\",\"modifiedAt\":\"2020-12-10T13:13:46.428+00:00\",\"brand\":\"Renault\",\"model\":\"Clio\"},{\"id\":2,\"createdAt\":\"2020-12-10T13:42:53.327+00:00\"," +
+                "\"modifiedAt\":\"2020-12-10T13:42:53.327+00:00\",\"brand\":\"Volvo\",\"model\":\"940\"}]");
+    }
+
+    @Test
+    public void stage2_findById() throws Exception {
+        String cars = restTemplate.getForObject("/cars/2", String.class);
+        assertEquals(cars, "{\"id\":2,\"createdAt\":\"2020-12-10T13:42:53.327+00:00\",\"modifiedAt\":\"2020-12-10T13:42:53.327+00:00\",\"brand\":\"Volvo\",\"model\":\"940\"}");
     }
 }
 
