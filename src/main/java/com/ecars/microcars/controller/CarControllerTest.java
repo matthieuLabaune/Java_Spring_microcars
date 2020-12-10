@@ -15,6 +15,7 @@ public class CarControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
+
     @Test
     public void stage1_AllCars() throws Exception {
         String cars = restTemplate.getForObject("/cars", String.class);

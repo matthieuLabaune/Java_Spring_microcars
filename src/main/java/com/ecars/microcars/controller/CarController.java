@@ -57,4 +57,3 @@ public class CarController {
         return new ResponseEntity<>("Car is deleted successfully", HttpStatus.OK);
     }
 }
-
