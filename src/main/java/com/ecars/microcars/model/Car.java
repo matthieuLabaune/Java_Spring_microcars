@@ -8,10 +8,6 @@ import java.util.Date;
 @Entity // Comprend que le nom de la table sera automatiquement car et les colonnes id, brand & model, etc
 public class Car {
 
-/*
-    private static SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'");
-*/
-
     //ID
     @Id
     @GeneratedValue
@@ -64,6 +60,22 @@ public class Car {
 
     public void setModel(String model) {
         this.model = model;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getModifiedAt() {
+        return modifiedAt;
+    }
+
+    public void setModifiedAt(Date modifiedAt) {
+        this.modifiedAt = modifiedAt;
     }
 
     @Override
