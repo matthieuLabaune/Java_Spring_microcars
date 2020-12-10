@@ -1,11 +1,9 @@
 package com.ecars.microcars.model;
 
 import javax.persistence.*;
-import javax.xml.crypto.Data;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@Entity // Comprend que le nom de la table sera automatiquement car et les colonnes id, brand & model, etc
+@Entity
 public class Car {
 
     //ID
@@ -84,7 +82,6 @@ public class Car {
                 "id=" + id +
                 ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
-                ", modifiedAt='" + model + '\''+
                 '}';
     }
 }
