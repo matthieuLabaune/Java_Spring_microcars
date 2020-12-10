@@ -50,13 +50,6 @@ public class CarController {
         return new ResponseEntity<>("Car is updated successsfully", HttpStatus.OK);
     }
 
-    //DELETE
-/*        @ApiOperation(value = "Supprime une voiture grâce à son ID")
-        @DeleteMapping (value = "/cars/{id}")
-        public void deleteCar(@PathVariable int id) {
-            carRepository.deleteById(id);
-        }*/
-
     @ApiOperation(value = "Supprime une voiture grâce à son ID")
     @RequestMapping(value = "/cars/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Object> delete(@PathVariable("id") int id) {
