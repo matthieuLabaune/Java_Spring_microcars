@@ -1,4 +1,4 @@
----
+-------------------------------------
 * [2 · Annotations Web](#2--annotations-web)
     * [2.1 · @Controller](#21--controller)
     * [2.2 · @ResponseBody](#22--responsebody)
@@ -6,7 +6,7 @@
     * [2.4 · @RequestMapping](#24--requestmapping)
     * [2.5 · @PathVariable](#25--pathvariable)
     * [2.6 · CRUD Annotations](#26--crud-annotations)
----
+-------------------------------------
 ## 2 · Annotations Web
 
 ### 2.1 · @Controller
