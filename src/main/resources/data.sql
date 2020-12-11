@@ -1,2 +1,2 @@
-INSERT INTO cars VALUES (1, 'Renault', 'Clio');
-INSERT INTO cars VALUES (2, 'Volvo', '940');
+INSERT INTO cars (id, brand, model) VALUES (1, 'Renault', 'Clio');
+INSERT INTO cars (id, brand, model) VALUES (2, 'Volvo', '940');

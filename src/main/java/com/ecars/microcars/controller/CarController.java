@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Api(tags = "CarController.java : Controller pour API REST (CRUD sur les voitures)")
 @RestController
@@ -28,22 +29,22 @@ public class CarController {
     //SHOW BY ID => /cars/{id}
     @ApiOperation(value = "Récupère une voiture grâce à son ID")
     @GetMapping(value = "cars/{id}") //GET Mapping pour l'uri pour retourner une voiture par l'id
-    public Cars showCar(@PathVariable int id) {// Va chercher le paramètre id dans l'url et le passe à notre méthode
+    public Optional<Cars> showCar(@PathVariable int id) {// Va chercher le paramètre id dans l'url et le passe à notre méthode
         return carRepository.findById(id);
     }
 
     @ApiOperation(value = "Ajoute une voiture grâce à la liste")
     //STORE /cars
     @RequestMapping(value = "/cars/", method = RequestMethod.POST)
-    public ResponseEntity<Object> createCar(@RequestBody Cars car) {
-        carRepository.save(car);
+    public ResponseEntity<Object> createCar(@RequestBody Cars cars) {
+        carRepository.save(cars);
         return new ResponseEntity<>("Car is created successfully", HttpStatus.CREATED);
     }
 
     @ApiOperation(value = "Mise à jour d'une voiture grâce à son ID")
     @PutMapping(value = "/cars/{id}")
     public ResponseEntity<Object> updateCar(@PathVariable("id") int id, @RequestBody Cars car) {
-        Cars currentCar = carRepository.findById(id);
+        Cars currentCar = carRepository.getOne(id);
         currentCar.setBrand(car.getBrand());
         currentCar.setModel(car.getModel());
         carRepository.save(currentCar);
