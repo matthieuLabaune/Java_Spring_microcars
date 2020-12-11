@@ -1,12 +1,12 @@
----
-* [1 · Annotations générales](#1--annotations-gnrales)
-    * [1.1 · @EnableAutoConfiguration](#11--enableautoconfiguration)
-    * [1.2 · @Autowired](#12--autowired)
-    * [1.3 · @Repository](#13--repository)
+-------------------------------------
+- [1 · Annotations générales](#1--annotations-générales)
+    - [1.1 · @EnableAutoConfiguration](#11--enableautoconfiguration)
+    - [1.2 · @Autowired](#12--autowired)
+    - [1.3 · @Repository](#13--repository)
     
----
+-------------------------------------
 
-## 1 · Annotations générales
+##  1 · Annotations générales
 
 ### 1.1 · @EnableAutoConfiguration
 
