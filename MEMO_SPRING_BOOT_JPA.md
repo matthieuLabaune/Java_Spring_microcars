@@ -1,13 +1,13 @@
----
+-------------------------------------
 * [3 · JPA et MariaDB](#3--jpa-et-mariadb)
-    * [3.1 · Configuration générale](#31--configuration-gnrale)
+    * [3.1 · Configuration générale](#31--configuration-générale)
     * [3.2 · Annotations JPA](#32--annotations-jpa)
     * [3.2.1 · @Entity](#321--entity)
     * [3.2.2 · @Id](#322--id)
     * [3.2.3 · @GeneratedValue](#323--generatedvalue)
     * [3.2.4 · @Temporal](#324--temporal)
   
----
+-------------------------------------
 
 ## 3 · JPA et MariaDB
 
