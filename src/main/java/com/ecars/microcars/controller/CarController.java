@@ -1,7 +1,7 @@
 package com.ecars.microcars.controller;
 
 import com.ecars.microcars.repository.CarRepository;
-import com.ecars.microcars.model.Car;
+import com.ecars.microcars.model.Cars;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,29 +21,29 @@ public class CarController {
     //INDEX => /cars
     @ApiOperation(value = "Récupère la liste de toutes les voitures")
     @GetMapping(value = "cars") //GET Mapping pour l'uri pour la liste des voitures
-    public List<Car> listCars() {
+    public List<Cars> listCars() {
         return carRepository.findAll();
     }
 
     //SHOW BY ID => /cars/{id}
     @ApiOperation(value = "Récupère une voiture grâce à son ID")
     @GetMapping(value = "cars/{id}") //GET Mapping pour l'uri pour retourner une voiture par l'id
-    public Car showCar(@PathVariable int id) {// Va chercher le paramètre id dans l'url et le passe à notre méthode
+    public Cars showCar(@PathVariable int id) {// Va chercher le paramètre id dans l'url et le passe à notre méthode
         return carRepository.findById(id);
     }
 
     @ApiOperation(value = "Ajoute une voiture grâce à la liste")
     //STORE /cars
     @RequestMapping(value = "/cars/", method = RequestMethod.POST)
-    public ResponseEntity<Object> createCar(@RequestBody Car car) {
+    public ResponseEntity<Object> createCar(@RequestBody Cars car) {
         carRepository.save(car);
         return new ResponseEntity<>("Car is created successfully", HttpStatus.CREATED);
     }
 
     @ApiOperation(value = "Mise à jour d'une voiture grâce à son ID")
     @PutMapping(value = "/cars/{id}")
-    public ResponseEntity<Object> updateCar(@PathVariable("id") int id, @RequestBody Car car) {
-        Car currentCar = carRepository.findById(id);
+    public ResponseEntity<Object> updateCar(@PathVariable("id") int id, @RequestBody Cars car) {
+        Cars currentCar = carRepository.findById(id);
         currentCar.setBrand(car.getBrand());
         currentCar.setModel(car.getModel());
         carRepository.save(currentCar);

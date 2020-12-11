@@ -1,19 +1,19 @@
 package com.ecars.microcars.repository;
 
-import com.ecars.microcars.model.Car;
+import com.ecars.microcars.model.Cars;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface CarRepository extends JpaRepository<Car, Integer> {
+public interface CarRepository extends JpaRepository<Cars, Integer> {
 
-     List<Car> findAll();
+     List<Cars> findAll();
 
-     Car findById(int id);
+     Cars findById(int id);
 
-     Car save(Car car);
+     Cars save(Cars car);
 
-     Car deleteById(int id);
+     Cars deleteById(int id);
 }

@@ -1,39 +1,29 @@
 package com.ecars.microcars.model;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
-public class Car {
+public class Cars {
 
     //ID
     @Id
     @GeneratedValue
     private int id;
 
-    //TIMESTAMP
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdAt;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date modifiedAt;
-
     //DATA ON CARS
     private String brand;
     private String model;
 
-    public Car() {
+    public Cars() {
     }
 
-    public Car(String brand, String model) {
+    public Cars(String brand, String model) {
     }
 
-    public Car(int id, String brand, String model, Date createdAt, Date modifiedAt) {
+    public Cars(int id, String brand, String model) {
         this.id = id;
         this.brand = brand;
         this.model = model;
-        this.createdAt = createdAt;
-        this.modifiedAt = modifiedAt;
     }
 
     public int getId() {
@@ -58,22 +48,6 @@ public class Car {
 
     public void setModel(String model) {
         this.model = model;
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Date getModifiedAt() {
-        return modifiedAt;
-    }
-
-    public void setModifiedAt(Date modifiedAt) {
-        this.modifiedAt = modifiedAt;
     }
 
     @Override
