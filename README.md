@@ -39,7 +39,7 @@ que vous ayez à lever le petit doigt.
 
 ### 1.2 · @Autowired
 
-Pour relier les parties de l'application entre elles, utilisez le ***```@Autowired```*** sur les champs, les
+Pour relier les parties de l'application entre elles, on utilise le ***```@Autowired```*** sur les champs, les
 constructeurs ou les méthodes d'un composant. ***```@Autowired```***.
 
 ##### Exemple
@@ -52,7 +52,19 @@ constructeurs ou les méthodes d'un composant. ***```@Autowired```***.
 ### 1.3 · @Repository
 
 ***```@Repository```*** est une annotation qui indique que la classe associée est un dépôt. Un dépôt est un mécanisme
-d'encapsulation du stockage, de la récupération et du comportement de recherche qui émule une collection d'objets.
+d'encapsulation du stockage, de la récupération et du comportement de recherche qui émule une collection d'objets. On se
+sert de ***```@Repository```*** pour tout ce qui touche à la gestion des données. Le Repository va contenir les méthodes
+qui permettent d'accéder et de modifier les données.
+
+```java 
+@Repository
+public interface CarRepository extends JpaRepository<Car, Integer> {
+     List<Car> findAll();
+     Car findById(int id);
+     Car save(Car car);
+     Car deleteById(int id);
+}
+```
 
 ## 2 · Annotations Web
 
@@ -68,7 +80,7 @@ quelles méthodes servent quels points terminaux.
 
 @Controller
 public class MainController {
-    // Méthodes du controller
+    // Méthodes du controller CRUD par exemple GET, POST, PUT, DELETE.
     //...
 }
 ```
@@ -76,8 +88,8 @@ public class MainController {
 ### 2.2 · @ResponseBody
 
 Le ***```@ResponseBody```*** est une annotation qui fait que Spring lie la valeur de retour d'une méthode au corps de
-réponse HTTP. Lors de la construction d'un terminal JSON, c'est une façon étonnante de convertir magiquement vos objets
-en JSON pour une utilisation plus facile.
+réponse HTTP. Lors de la construction d'un terminal JSON, c'est une façon étonnante de convertir "*magiquement*" des 
+objets en JSON pour une utilisation plus facile.
 
 ### 2.3 · @RestController
 
@@ -99,7 +111,7 @@ public class CarController {
 
 L'annotation ***```@RequestMapping(method = RequestMethod.GET, value = "/path")```*** spécifie une méthode dans le
 contrôleur qui devrait être responsable de servir la requête HTTP vers le chemin donné. Spring travaillera sur les
-détails de la mise en œuvre de cette méthode. Il vous suffit de spécifier la valeur du chemin sur l'annotation et Spring
+détails de la mise en œuvre de cette méthode. Il suffit de spécifier la valeur du chemin sur l'annotation et Spring
 acheminera les requêtes vers les méthodes d'action correctes.
 
 ##### Exemple
@@ -113,30 +125,24 @@ public String carList(Model model){
         }
 ```
 
-### 2.5 · @RequestParam
 
-Bien entendu, les méthodes de traitement des demandes peuvent être paramétrées. Pour vous aider à lier les paramètres
-HTTP dans les arguments des méthodes d'action, vous pouvez utiliser
-l'annotation ***```@RequestParam(value="name", defaultValue="World")```***. Spring analysera les paramètres de la
-requête et mettra les paramètres appropriés dans les arguments de votre méthode.
+### 2.5 · @PathVariable
 
-### 2.6 · @PathVariable
-
-Une autre façon courante de fournir des informations au backend est de les coder dans l'URL. Vous pouvez ensuite
-utiliser l'annotation ***```@PathVariable("placeholderName")```*** pour amener les valeurs de l'URL aux arguments de la
+Une façon courante de fournir des informations au backend est de les coder dans l'URL. Pour cela, on
+utilise l'annotation ***```@PathVariable("placeholderName")```*** pour amener les valeurs de l'URL aux arguments de la
 méthode.
 
 ##### Exemple
 
 ```java
-// Ici, on passe l'id (int) comme information via l'url via la méthode showCar
-public Car showCar(@PathVariable int id){
-        Car car=new Car(id,"Honda","Jazz");
-        return car;
+ //SHOW BY ID => /cars/{id}
+@GetMapping(value = "cars/{id}") //GET Mapping pour l'uri pour retourner une voiture par l'id
+public Car showCar(@PathVariable int id) {// Va chercher le paramètre id dans l'url et le passe à notre méthode
+        return carRepository.findById(id);
         }
 ```
 
-### 2.7 · CRUD Annotations
+### 2.6 · CRUD Annotations
 
 Pour construire un CRUD on peut utiliser les annotations correspondant aux requêtes HTTP, à savoir :
 
